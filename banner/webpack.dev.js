@@ -4,6 +4,7 @@ const webpack=require('webpack');
 module.exports=merge(common_config,{
     devServer:{
         contentBase:'dist',
+        open:'Chrome',
         hot:true,
     },
     mode:'development',

@@ -8,7 +8,8 @@ module.exports = {
     zoom: "./scripts/zoom.js",
     waterfall: "./scripts/waterfall.js",
     lazyload: "./scripts/lazyload.js", */
-    debounce: "./scripts/debounce.js",
+    // debounce: "./scripts/debounce.js",
+     test: "./scripts/test.js",
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
@@ -56,11 +57,12 @@ module.exports = {
       template: "index.html",
       chunks: ["index"]
     }),
+    */
     new htmlPlugin({
       filename: "test.html",
       template: "test.html",
-      chunks: []
-    }), */
+      chunks: ['test']
+    }), 
     /* new htmlPlugin({
       filename: "zoom.html",
       template: "zoom.html",
@@ -76,10 +78,10 @@ module.exports = {
       template: "lazyload.html",
       chunks: ["lazyload"]
     }), */
-    new htmlPlugin({
+    /* new htmlPlugin({
       filename: "debounce.html",
       template: "debounce.html",
       chunks: ["debounce"]
-    }),
+    }), */
   ]
 };
