@@ -1,0 +1,12 @@
+@mixin mixin1 {
+    color:#f00;
+}
+.mixin2 {
+    color:#0f0;
+}
+@function test(){
+    @return 13px;
+}
+%mixin3 {
+    color:#00f;
+}

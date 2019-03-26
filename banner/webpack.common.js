@@ -1,5 +1,5 @@
 const path = require("path");
-const cleanPlugin = require("webpack-clean-plugin");
+const cleanPlugin = require("clean-webpack-plugin");
 const htmlPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: {
@@ -48,16 +48,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new cleanPlugin({
-      on: "emit",
-      path: ["./dist"]
-    }),
-    /* new htmlPlugin({
-      filename: "index.html",
-      template: "index.html",
-      chunks: ["index"]
-    }),
-    */
     new htmlPlugin({
       filename: "test.html",
       template: "test.html",
