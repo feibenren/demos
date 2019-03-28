@@ -1,11 +1,18 @@
-'use strict'
+function* fakeAsync() {
+  yield fetch('http://localhost:8080/test.html');
+  yield fetch('http://localhost:8080');
+}
 
-var obj={};
-console.log(obj);
-Object.defineProperty(obj,'name',{
-  value:2,
-});
-Object.defineProperty(obj,'name',{
-  writable:false
-});
-console.log(obj);
+function myco(arg) {
+  let g = arg();
+  function next(data){
+    let res=g.next();
+    if(res.done){
+      return res.value;
+    }
+    res.value.then((data)=>{next(data)});
+  }
+  return next(g);
+}
+
+myco(fakeAsync);
