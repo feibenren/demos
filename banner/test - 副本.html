@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+  <body>
+    <script
+      type="text/javascript"
+      src="http://api.map.baidu.com/api?v=2.0&ak=eBS0R9GZRA0m3KGYgramfZPrLQmrWP53"
+    ></script>
+    <script
+      type="text/javascript"
+      src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css"
+    />
+
+    <div class="mapbox" id="mapbox" style="height:400px;"></div>
+
+    <script>
+      // 百度地图API功能
+      var map = new BMap.Map("mapbox");
+      var poi = new BMap.Point(121.397836, 31.259465);
+      map.centerAndZoom(poi, 16);
+      map.enableScrollWheelZoom();
+      var content = "";
+      //创建检索信息窗口对象
+      var searchInfoWindow = null;
+      searchInfoWindow = new BMapLib.SearchInfoWindow(map, content, {
+        title: "鸿海大厦", //标题
+        enableAutoPan: true, //自动平移
+      });
+      var marker = new BMap.Marker(poi); //创建marker对象
+      marker.enableDragging(); //marker可拖拽
+      marker.addEventListener("click", function(e) {
+        searchInfoWindow.open(marker);
+      });
+      map.addOverlay(marker); //在地图中添加marker
+    </script>
+  </body>
+</html>
