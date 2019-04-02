@@ -7,7 +7,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "scripts/[name]_[hash].js"
+    filename: "scripts/[name].js"
   },
   module: {
     rules: [
@@ -29,7 +29,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "images/[name]-[hash].[ext]"
+              name: "images/[name].[ext]"
             }
           }
         ]
