@@ -3,12 +3,6 @@ const cleanPlugin = require("clean-webpack-plugin");
 const htmlPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: {
-    /* index: "./scripts/index.js",
-    test: "./scripts/test.js",
-    zoom: "./scripts/zoom.js",
-    waterfall: "./scripts/waterfall.js",
-    lazyload: "./scripts/lazyload.js", */
-    // debounce: "./scripts/debounce.js",
      test: "./scripts/test.js",
   },
   output: {
