@@ -1,30 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0,user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>XMLHttpRequest</title>
   </head>
   <body>
-    <div class="box">
-      <div class="item">
-        <img
-          src="http://n.sinaimg.cn/photo/transform/700/w1000h500/20190326/bVgc-hutwezf5625873.jpg"
-        />
-      </div>
-      <div class="item">
-        <img
-          src="http://n.sinaimg.cn/photo/transform/700/w1000h500/20190326/T58g-hutwezf5619237.jpg"
-        />
-      </div>
-      <div class="item">
-        <img
-          src="http://n.sinaimg.cn/photo/700/w1000h500/20190325/_05e-hutwezf1382237.jpg"
-        />
-      </div>
-    </div>
+    <div class="container">
+      aaaa
+    <textarea ></textarea>
   </body>
 </html>
+<script>
+var worker=new Worker('./scripts/test_worker.js');
+worker.onmessage=function(ev){
+  console.log(ev);
+}
+</script>
