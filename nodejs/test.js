@@ -1,7 +1,4 @@
-setImmediate(function(arg){
-    console.log(setImmediate,arg);
-},'canshu')
-setTimeout(() => {
-    console.log('setTimeout')
-}, 0);
+// require('./mod1');
+// console.log('test:',require.main);
 
+console.log(process.platform);
